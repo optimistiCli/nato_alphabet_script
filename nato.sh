@@ -1,10 +1,16 @@
 #!/bin/bash
 
+if [ "$USER" == 'msh' ]; then
+    A_WORD='Alfa'
+else
+    A_WORD='Alpha'
+fi
+
 function natostdin {
 tr -dc 0-9a-zA-Z | \
 tr a-z A-Z | \
 sed " \
-s/A/Alpha /g; \
+s/A/${A_WORD} /g; \
 s/B/Bravo /g; \
 s/C/Charlie /g; \
 s/D/Delta /g; \
