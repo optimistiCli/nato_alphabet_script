@@ -1,54 +1,205 @@
 #!/bin/bash
 
-if [ "$USER" == 'msh' ]; then
-    A_WORD='Alfa'
-else
-    A_WORD='Alpha'
-fi
-
 function natostdin {
-tr -dc 0-9a-zA-Z | \
-tr a-z A-Z | \
-sed " \
-s/A/${A_WORD} /g; \
-s/B/Bravo /g; \
-s/C/Charlie /g; \
-s/D/Delta /g; \
-s/E/Echo /g; \
-s/F/Foxtrot /g; \
-s/G/Golf /g; \
-s/H/Hotel /g; \
-s/I/India /g; \
-s/J/Juliett /g; \
-s/K/Kilo /g; \
-s/L/Lima /g; \
-s/M/Mike /g; \
-s/N/November /g; \
-s/O/Oscar /g; \
-s/P/Papa /g; \
-s/Q/Quebec /g; \
-s/R/Romeo /g; \
-s/S/Sierra /g; \
-s/T/Tango /g; \
-s/U/Uniform /g; \
-s/V/Victor /g; \
-s/W/Whiskey /g; \
-s/X/X-ray /g; \
-s/Y/Yankee /g; \
-s/Z/Zulu /g; \
-s/0/Zero /g; \
-s/1/One /g; \
-s/2/Two /g; \
-s/3/Three /g; \
-s/4/Four /g; \
-s/5/Fiver /g; \
-s/6/Six /g; \
-s/7/Seven /g; \
-s/8/Eight /g; \
-s/9/Niner /g; \
-"
-echo ''
+    tr -dc 0-9a-zA-Z | \
+    while read -n 1 C; do
+        case $C in
+            A)
+                echo -n 'ALPHA '
+                ;;
+            B)
+                echo -n 'BRAVO '
+                ;;
+            C)
+                echo -n 'CHARLIE '
+                ;;
+            D)
+                echo -n 'DELTA '
+                ;;
+            E)
+                echo -n 'ECHO '
+                ;;
+            F)
+                echo -n 'FOXTROT '
+                ;;
+            G)
+                echo -n 'GOLF '
+                ;;
+            H)
+                echo -n 'HOTEL '
+                ;;
+            I)
+                echo -n 'INDIA '
+                ;;
+            J)
+                echo -n 'JULIETT '
+                ;;
+            K)
+                echo -n 'KILO '
+                ;;
+            L)
+                echo -n 'LIMA '
+                ;;
+            M)
+                echo -n 'MIKE '
+                ;;
+            N)
+                echo -n 'NOVEMBER '
+                ;;
+            O)
+                echo -n 'OSCAR '
+                ;;
+            P)
+                echo -n 'PAPA '
+                ;;
+            Q)
+                echo -n 'QUEBEC '
+                ;;
+            R)
+                echo -n 'ROMEO '
+                ;;
+            S)
+                echo -n 'SIERRA '
+                ;;
+            T)
+                echo -n 'TANGO '
+                ;;
+            U)
+                echo -n 'UNIFORM '
+                ;;
+            V)
+                echo -n 'VICTOR '
+                ;;
+            W)
+                echo -n 'WHISKEY '
+                ;;
+            X)
+                echo -n 'X-RAY '
+                ;;
+            Y)
+                echo -n 'YANKEE '
+                ;;
+            Z)
+                echo -n 'ZULU '
+                ;;
+            a)
+                echo -n 'alpha '
+                ;;
+            b)
+                echo -n 'bravo '
+                ;;
+            c)
+                echo -n 'charlie '
+                ;;
+            d)
+                echo -n 'delta '
+                ;;
+            e)
+                echo -n 'echo '
+                ;;
+            f)
+                echo -n 'foxtrot '
+                ;;
+            g)
+                echo -n 'golf '
+                ;;
+            h)
+                echo -n 'hotel '
+                ;;
+            i)
+                echo -n 'india '
+                ;;
+            j)
+                echo -n 'juliett '
+                ;;
+            k)
+                echo -n 'kilo '
+                ;;
+            l)
+                echo -n 'lima '
+                ;;
+            m)
+                echo -n 'mike '
+                ;;
+            n)
+                echo -n 'november '
+                ;;
+            o)
+                echo -n 'oscar '
+                ;;
+            p)
+                echo -n 'papa '
+                ;;
+            q)
+                echo -n 'quebec '
+                ;;
+            r)
+                echo -n 'romeo '
+                ;;
+            s)
+                echo -n 'sierra '
+                ;;
+            t)
+                echo -n 'tango '
+                ;;
+            u)
+                echo -n 'uniform '
+                ;;
+            v)
+                echo -n 'victor '
+                ;;
+            w)
+                echo -n 'whiskey '
+                ;;
+            x)
+                echo -n 'x-ray '
+                ;;
+            y)
+                echo -n 'yankee '
+                ;;
+            z)
+                echo -n 'zulu '
+                ;;
+            0)
+                echo -n 'zero '
+                ;;
+            0)
+                echo -n 'Zero '
+                ;;
+            1)
+                echo -n 'One '
+                ;;
+            2)
+                echo -n 'Two '
+                ;;
+            3)
+                echo -n 'Three '
+                ;;
+            4)
+                echo -n 'Four '
+                ;;
+            5)
+                echo -n 'Fiver '
+                ;;
+            6)
+                echo -n 'Six '
+                ;;
+            7)
+                echo -n 'Seven '
+                ;;
+            8)
+                echo -n 'Eight '
+                ;;
+            9)
+                echo -n 'Niner '
+                ;;
+        esac
+    done | \
+    sed 's/[[:blank:]]*\$//; s/\([[:alnum:]][[:alnum:][:blank:]]\{1,72\}\)[[:blank:]]\([[:alnum:]]\)/\1\n\2/g'
+
+    echo ''
 }
+
 
 if [ -n "$1" ]; then
     # Command line argument
