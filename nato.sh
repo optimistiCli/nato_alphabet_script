@@ -29,6 +29,7 @@ s/V/Victor /g; \
 s/W/Whiskey /g; \
 s/X/X-ray /g; \
 s/Y/Yankee /g; \
+s/Z/Zulu /g; \
 s/0/Zero /g; \
 s/1/One /g; \
 s/2/Two /g; \
